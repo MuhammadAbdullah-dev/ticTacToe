@@ -20,8 +20,7 @@ switch(name){
     color={'#38CC77'}/>
     break;
   default:
-    return <Icon name = 'pencil-alt' size={38}
-    color={'#0D0D0D'}/>
+    return null
     break;
 }
 }

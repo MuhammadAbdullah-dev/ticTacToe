@@ -38,8 +38,15 @@ export default function App() {
       setIsWinner(isCrossed ? `${nameOne} is the winner of the game`: 'Player Two is the winner of the game')
     }
     else if(
-      gameState[6] === gameState[4] &&
-      gameState[6] === gameState[5] &&
+      gameState[0] === gameState[3] &&
+      gameState[0] === gameState[6] &&
+      gameState[0] !== 'empty'
+    ) {
+      setIsWinner(isCrossed ? `${nameOne} is the winner of the game`: 'Player Two is the winner of the game')
+    }
+    else if(
+      gameState[6] === gameState[7] &&
+      gameState[6] === gameState[8] &&
       gameState[6] !== 'empty'
     ) {
       setIsWinner(isCrossed ? `${nameOne} is the winner of the game`: 'Player Two is the winner of the game')
@@ -116,7 +123,7 @@ export default function App() {
       (
       <View 
       style={[styles.playerInfo,
-      isCrossed? styles.playerO: styles.playerX]}>
+      isCrossed? styles.playerX: styles.playerO]}>
         {/* Checking for whose turn is this */}
         <Text style={styles.gameTurnTxt}>
           Player {isCrossed ? 'One' : 'Two'} 's turn
